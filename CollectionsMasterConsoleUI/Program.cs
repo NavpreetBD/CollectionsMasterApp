@@ -31,7 +31,7 @@ namespace CollectionsMasterConsoleUI
 
             //TODO: Print the last number of the array
             Console.WriteLine();
-            Console.WriteLine(array[array.Length-1]); // (array[49]);
+            Console.WriteLine(array[array.Length - 1]); // (array[49]);
 
             Console.WriteLine("All Numbers Original");
             //UNCOMMENT this method to print out your numbers from arrays or lists
@@ -44,9 +44,9 @@ namespace CollectionsMasterConsoleUI
                  2) Second way, Create a custom method (scroll to bottom of page to find ⬇⬇⬇)
             */
 
-            
+
             Array.Reverse(array);
-            NumberPrinter(array); 
+            NumberPrinter(array);
 
             Console.WriteLine("All Numbers Reversed:");
 
@@ -93,16 +93,16 @@ namespace CollectionsMasterConsoleUI
             //TODO: Print the new capacity
             Console.WriteLine("New capacity of List: ");
             Console.WriteLine(list.Capacity);
-            
+
 
             Console.WriteLine("---------------------");
 
             //TODO: Create a method that prints if a user number is present in the list
             //Remember: What if the user types "abc" accident your app should handle that!
             Console.WriteLine("What number will you search for in the number list?");
-            bool canParse= int.TryParse(Console.ReadLine(),out int userInput);   //?
+            bool canParse = int.TryParse(Console.ReadLine(), out int userInput);   //?
             NumberChecker(list, userInput);
-            
+
             Console.WriteLine("-------------------");
 
             Console.WriteLine("All Numbers:");
@@ -114,24 +114,24 @@ namespace CollectionsMasterConsoleUI
             //TODO: Create a method that will remove all odd numbers from the list then print results
             Console.WriteLine("Evens Only!!");
             OddKiller(list);
-            
+
             Console.WriteLine("------------------");
 
             //TODO: Sort the list then print results
             Console.WriteLine("Sorted Evens!!");
             list.Sort();
             NumberPrinter(list);
-            
+
             Console.WriteLine("------------------");
 
             //TODO: Convert the list to an array and store that into a variable
-            int [] newArray = list.ToArray();
+            int[] newArray = list.ToArray();
 
 
             //TODO: Clear the list
             list.Clear();
             NumberPrinter(list);
-            
+
 
             #endregion
         }
@@ -150,7 +150,7 @@ namespace CollectionsMasterConsoleUI
 
         private static void OddKiller(List<int> numberList)
         {
-            for (int i = numberList.Count; i >= 0; i --) // removing changing the indexing too, so removing number in backward
+            for (int i = numberList.Count - 1; i >= 0; i--) // removing changing the indexing too, so removing number in backward
             {
                 if (numberList[i] % 2 != 0)
                 {
@@ -163,7 +163,7 @@ namespace CollectionsMasterConsoleUI
         private static void NumberChecker(List<int> numberList, int searchNumber)
         {
             bool foundNumber = false;
-            foreach(int number in numberList)
+            foreach (int number in numberList)
             {
                 if (number == searchNumber)
                 {
@@ -181,7 +181,7 @@ namespace CollectionsMasterConsoleUI
         private static void Populater(List<int> numberList)   // explanation
         {
             Random rng = new Random();
-            for (int i = 0; i <=50; i++ )
+            for (int i = 0; i <= 50; i++)
             {
                 int randomNumber = rng.Next(51);
                 numberList.Add(randomNumber);
@@ -202,7 +202,7 @@ namespace CollectionsMasterConsoleUI
         {
             int[] newArray = new int[50];
             int index = 0;
-            for (int i = array.Length - 1; i >= 0; i--) 
+            for (int i = array.Length - 1; i >= 0; i--)
             {
                 newArray[index] = array[i];
                 index++;
